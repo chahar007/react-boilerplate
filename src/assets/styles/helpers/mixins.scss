@@ -1,0 +1,22 @@
+@import "variables";
+
+@mixin flex-container($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin font($minimum, $preffered, $maximum, $family: regular, $color: #000) {
+  $minimum: $minimum/$primary-font-size-value + rem;
+  $maximum: $maximum/$primary-font-size-value + rem;
+
+  color: $color;
+  font-size: clamp(#{$minimum}, #{$preffered}, #{$maximum});
+}
+
+
+@mixin bg-image($url, $size: cover) {
+  background: url("../../images/bg/" + $url) no-repeat top center;
+  background-size: $size;
+}
